@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
     <body>
+    <div class="blackout__menu" id="blackout__menu"></div>
     <header class="header">
     <div class="hamb">
         <div class="hamb__field" id="hamb">
-            <span class="bar bar1"></span>
-            <span class="bar bar2"></span>
-            <span class="bar bar3"></span>
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
         </div>
     </div>
-    <a href="" class="logo" id="logo"><h1>Morkovka</h1></a>
-    <div class="popup" id="popup">
+    <a href="" id="logo"><h1 class="logo _icon-carrot">Morkovka</h1></a>
+</header>
+<div class="popup" id="popup">
         <nav class="navbar">
         <div class="container">
             <div class="navbar__wrap">
                 <ul class="menu" id="menu">
+                    <li class="popup__header">
+                        <a href="index.html" class="logo__popup__menu _icon-carrot" id="logo">Morkovka</a>
+                        <div class="popup__close__button" id="popup__close__button">
+                            <div class="popup__close__button__wrap">
+                                <span class="popup_bar popup_bar1"></span>
+                                <span class="popup_bar popup_bar2"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="popup__indent"></li>
                     <li class="menu__item__group">
                         <a href="#" class="menu__catalog menu__item _icon-catalog">Катлог товаров</a>
                     </li>
@@ -40,7 +52,7 @@
                         <a href="#" class="menu__faq menu__item _icon-faq">FAQ</a>
                     </li>
                     <li class="menu__line"></li>
-                    <li>
+                    <li class="language__popup__section">
                         <h3 class="language__head">Язык</h3>
                         <ul class="language__switcher">
                             <li>
@@ -52,14 +64,16 @@
                                 <button class="language__choice language__choice__ua" id="language__choice__ua">
                                     <h3 class="language__choice__head">UA</h3>
                                 </button>
-                                
                             </li>
                         </ul>
                     </li>
                     <li class="menu__line"></li>
                     <li class="dropper__nav__menu__list">
-                        <h3 class="dropper__nav__head information__about__company__menu">Информация о компании</h3>
-                        <span class="_icon-arrow"></span>
+                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow1">
+                            <h3 class="dropper__nav__head information__about__company__menu">Информация о компании</h3>
+                            <span class="_icon-arrow arrow1"></span>
+                        </div>
+                        
                             <ul class="dropper__nav__menu">
                                 <li><a href="#" class="dropper__nav__choice">О нас</a></li>
                                 <li><a href="#" class="dropper__nav__choice">Условия использования сайта</a></li>
@@ -69,8 +83,11 @@
                     </li>
                     <li class="menu__line"></li>
                     <li class="dropper__nav__menu__list">   
-                        <h3 class="dropper__nav__head help__menu">Помощь</h3>
-                        <span class="_icon-arrow"></span>
+                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow2">
+                            <h3 class="dropper__nav__head help__menu">Помощь</h3>
+                            <span class="_icon-arrow"></span>
+                        </div>
+                        
                         <ul class="dropper__nav__menu">
                             <li><a href="#" class="dropper__nav__choice">Доставка и оплата</a></li>
                             <li><a href="#" class="dropper__nav__choice">Гарантия</a></li>
@@ -79,8 +96,11 @@
                     </li>
                     <li class="menu__line"></li>
                     <li class="dropper__nav__menu__list">
-                        <h3 class="dropper__nav__head for__parents__menu">Партнерам</h3>
-                        <span class="_icon-arrow" align="right"></span>  
+                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow3">
+                            <h3 class="dropper__nav__head for__parents__menu">Партнерам</h3>
+                            <span class="_icon-arrow"></span>
+                        </div>
+                          
                         <ul class="dropper__nav__menu">
                             <li><a href="#" class="dropper__nav__choice">Продавать на Morkovka</a></li>
                             <li><a href="#" class="dropper__nav__choice">Сотрудничество с нами</a></li>
@@ -103,10 +123,8 @@
         </div>
     </nav>
 </div>
-    
-</header>
     <section>
-    <!-- <div class="container">
+    <div class="container">
         <div class="slides">
             
         </div>
@@ -118,7 +136,7 @@
                 <button id="next-button"></button>
             </div>
         </div> 
-    </div> -->
+    </div>
 </section>
 <section>
     

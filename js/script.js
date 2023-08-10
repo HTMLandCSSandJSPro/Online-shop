@@ -18,41 +18,55 @@ document.querySelector('body').classList.add('no-webp');
 
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup"); 
+const blackout = document.querySelector("#blackout__menu")
+const body = document.querySelector("body");
+const popup__close__button = document.querySelector("#popup__close__button");
 
-hamb.addEventListener("click", hambHandler)
-document.addEventListener("DOMContentLoaded", function () {
-  isMobileAny();
+hamb.addEventListener("click", function () {
+  menuOpen();
 });
+popup__close__button.addEventListener("click", popupClose);
+blackout.addEventListener("click", popupClose);
+document.addEventListener("DOMContentLoaded", isMobileAny);
 
-function hambHandler(e) {
-  e.preventDefault();
-  popup.classList.toggle("open")
-  hamb.classList.toggle("active")
-  body.classList.toggle("noscroll")
+let scrollPosition = 0;
+const menuOpen = function () {
+  scrollPosition = window.pageYOffset;
+  popup.classList.add("open");
+  body.classList.add("noscroll");
+  blackout.classList.add("active");
+  window.scrollTo(0, 0);
 }
 
+const menuClose = function () {
+  popup.classList.remove("open");
+  body.classList.remove("noscroll");
+  blackout.classList.remove("active");
+  window.scrollTo(0, 0);
+};
 
 
-// for (i = 0; i < arrow.length; i++) {
-//   let thisLink = arrow[i].previousElementSibling;
-//   let subMenu = arrow[i].nextElementSibling;
-//   let thisArrow = arrow[i];
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    menuClose();
+  }
+});
 
-//   thisLink.classList.add("parent");
-//   arrow[i].addEventListener("click", function () {
-//     subMenu.classList.toggle("open");
-//     thisArrow.classList.toggle("active");
-//   });
-// }
+function popupOpen() {
+  menuOpen();
+}
 
+function popupClose() {
+  menuClose();
+}
 
-const menuLists = document.querySelectorAll('.dropper__nav__menu__list');
+const menuLists = document.querySelectorAll(".dropper__nav__menu__list");
 
 menuLists.forEach(menuList => {
   const subMenu = menuList.querySelector('.dropper__nav__menu');
   const thisArrow = menuList.querySelector('._icon-arrow');
 
-  menuList.addEventListener("click", function () {
+  thisArrow.addEventListener("click", () => {
     thisArrow.classList.toggle("active");
     if (subMenu.style.maxHeight) {
       subMenu.style.maxHeight = null;
@@ -62,7 +76,7 @@ menuLists.forEach(menuList => {
   });
 });
 
-let body = document.querySelector("body");
+
 
 
 function isMobileAny() {
