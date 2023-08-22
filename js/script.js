@@ -20,54 +20,59 @@ const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup"); 
 const blackout = document.querySelector("#blackout__menu")
 const body = document.querySelector("body");
-const popup__close__button = document.querySelector("#popup__close__button");
+const popupCloseButton = document.querySelector("#popup__close__button");
+const popupCatalogButton = document.querySelector("#popup__catalog__button")
+const popupBasketButton = document.querySelector("#popup__basket__button");
+
 
 hamb.addEventListener("click", function () {
-  menuOpen();
+  popupOpen();
 });
-popup__close__button.addEventListener("click", popupClose);
-blackout.addEventListener("click", popupClose);
-document.addEventListener("DOMContentLoaded", isMobileAny);
+popupCloseButton.addEventListener("click", function () {
+  popupClose();
+});
+blackout.addEventListener("click", function () {
+  popupClose();
+});
+document.addEventListener("DOMContentLoaded", function () {
+  isMobileAny();
+});
+popupCatalogButton.addEventListener("click", function () {
+  popupClose();
+  catalogOpen();
+})
+// popupBasketButton.addEventListener("click", function () {
+//   popupClose();
+//   basketOpen();
+// })
 
-let scrollPosition = 0;
-const menuOpen = function () {
-  scrollPosition = window.pageYOffset;
+function popupOpen() {
+  popup.scrollTo(0, 0);
   popup.classList.add("open");
   body.classList.add("noscroll");
   blackout.classList.add("active");
-  window.scrollTo(0, 0);
-}
-
-const menuClose = function () {
-  popup.classList.remove("open");
-  body.classList.remove("noscroll");
-  blackout.classList.remove("active");
-  window.scrollTo(0, 0);
-};
-
-
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    menuClose();
-  }
-});
-
-function popupOpen() {
-  menuOpen();
 }
 
 function popupClose() {
-  menuClose();
-}
+  popup.classList.remove("open");
+  body.classList.remove("noscroll");
+  blackout.classList.remove("active");
+};
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    popupClose();
+  }
+});
 
 const menuLists = document.querySelectorAll(".dropper__nav__menu__list");
 
 menuLists.forEach(menuList => {
   const subMenu = menuList.querySelector('.dropper__nav__menu');
-  const thisArrow = menuList.querySelector('._icon-arrow');
+  const arrow = menuList.querySelector('._icon-arrow');
 
-  thisArrow.addEventListener("click", () => {
-    thisArrow.classList.toggle("active");
+  arrow.addEventListener("click", () => {
+    arrow.classList.toggle("active");
     if (subMenu.style.maxHeight) {
       subMenu.style.maxHeight = null;
     } else {
