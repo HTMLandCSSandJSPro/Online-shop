@@ -7,130 +7,147 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
-    <div class="blackout__menu" id="blackout__menu"></div>
+    <div class="blackout" id="blackout"></div>
     <header class="header">
-    <div class="hamb">
-        <div class="hamb__field" id="hamb">
-            <div class="bar bar1"></div>
-            <div class="bar bar2"></div>
-            <div class="bar bar3"></div>
+    <button class="hamb" id="hamb">
+        <div class="hamb__field">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
         </div>
-    </div>
+    </button>
     <a href="" id="logo"><h1 class="logo _icon-carrot">Morkovka</h1></a>
     <button class="catalog__button" id="catalog__button">
-        <span class="catalog__button__text">Каталог</span>
+        Каталог
+    </button>
+    <button class="header__basket__button" id="header__basket__button">
+        <img class="header__basket" src="img/shopping-cart.svg" alt="">
+    </button>
+    <button class="header__profile__button" id="header__profile__button">
+        <img class="header__profile" src="img/profile.svg" alt="">
     </button>
 </header>
-<div class="popup" id="popup">    
-    <div class="container">
-<header class="popup__header">
-        <a href="index.html" class="logo__popup__menu _icon-carrot" id="logo">Morkovka</a>
-        <div class="popup__close__button" id="popup__close__button">
-            <div class="popup__close__button__wrap">
+<nav class="popup__menu" id="popup__menu">
+    <header class="popup__header">
+        <a href="./" class="logo__popup__menu _icon-carrot">Morkovka</a>
+        <button class="popup__menu__header__close__button" id="popup__menu__header__close__button">
+            <div>
                 <span class="popup_bar popup_bar1"></span>
                 <span class="popup_bar popup_bar2"></span>
             </div>
-        </div>
+        </button>
     </header>
-    <nav class="navbar">
-        
-            <div class="navbar__wrap">
-                <ul class="menu" id="menu">
-                    <li class="menu__item__group">
-                        <button class="menu__catalog menu__item  popup__catalog__button" id="popup__catalog__button">
-                            <span class="_icon-catalog"></span>
-                            <span>Катлог товаров</span>
-                        </button>
-                    </li>
-                    <li class="menu__item__group">
-                        <button class="menu__basket menu__item">
-                            <span class="_icon-shopping-cart"></span>
-                            <span>Корзина</span>
-                        </button>
-                    </li>
-                    <li class="menu__item__group">
-                        <a href="#" class="menu__points menu__item">
-                            <span class="_icon-point-of-issue"></span>
-                            <span>Пункты выдачи Morkovka</span>
-                        </a>
-                    </li>
-                    <li class="menu__item__group">
-                        <a href="#" class="menu__chat menu__item">
-                            <span class="_icon-paper-plane"></span>
-                            <span>Чат с Morkovka</span>
-                        </a>
-                    </li>
-                    <li class="menu__item__group">
-                        <a href="#" class="menu__faq menu__item">
-                            <span class="_icon-faq"></span>
-                            <span>FAQ</span>
-                        </a>
-                    </li>
-                    <li class="language__popup__section">
-                        <h3 class="language__head">Язык</h3>
-                        <ul class="language__switcher">
-                            <li>
-                                <button class="language__choice language__choice__ru" id="language__choice__ru" disabled>RU</button>
-                            </li>
-                            <li class="language__choice__indent"></li>
-                            <li>
-                                <button class="language__choice language__choice__ua" id="language__choice__ua">UA</button>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropper__nav__menu__list">
-                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow1">
-                            <h3 class="dropper__nav__head information__about__company__menu">О компании</h3>
-                            <span class="_icon-arrow arrow1"></span>
-                        </div>
-                        
-                            <ul class="dropper__nav__menu">
-                                <li><a href="#" class="dropper__nav__choice">О нас</a></li>
-                                <li><a href="#" class="dropper__nav__choice">Условия использования сайта</a></li>
-                                <li><a href="#" class="dropper__nav__choice">Контакты</a></li>
-                                <li><a href="#" class="dropper__nav__choice">Все категории</a></li>
-                            </ul>
-                    </li>
-                    <li class="dropper__nav__menu__list">   
-                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow2">
-                            <h3 class="dropper__nav__head help__menu">Помощь</h3>
-                            <span class="_icon-arrow"></span>
-                        </div>
-                        
-                        <ul class="dropper__nav__menu">
-                            <li><a href="#" class="dropper__nav__choice">Доставка и оплата</a></li>
-                            <li><a href="#" class="dropper__nav__choice">Гарантия</a></li>
-                            <li><a href="#" class="dropper__nav__choice">Возврат товара</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropper__nav__menu__list">
-                        <div class="dropper__nav__head__arrow dropper__nav__head__arrow3">
-                            <h3 class="dropper__nav__head for__parents__menu">Партнерам</h3>
-                            <span class="_icon-arrow"></span>
-                        </div>
-                          
-                        <ul class="dropper__nav__menu">
-                            <li><a href="#" class="dropper__nav__choice">Продавать на Morkovka</a></li>
-                            <li><a href="#" class="dropper__nav__choice">Сотрудничество с нами</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3 class="social__media__head">Мы в социальных сетях</h3>
-                        <ul class="social__media__list">
-                            <li><a href="https://facebook.com/" title="Facebook" target="_blank" class="social__media _icon-facebook"></a></li>
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank" class="social__media _icon-twitter"></a></li>
-                            <li><a href="https://www.youtube.com/" title="Youtube" target="_blank" class="social__media _icon-youtube"></a></li>
-                            <li><a href="https://www.instagram.com/" title="Instagram" target="_blank" class="social__media _icon-instagram"></a></li>
-                            <li><a href="https://www.viber.com/" title="Viber" target="_blank" class="social__media _icon-viber"></a></li>
-                            <li><a href="https://telegram.org/" title="Telegram" target="_blank" class="social__media _icon-telegram"></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <ul>
+        <li>
+            <button class="popup__menu__item popup__menu__catalog" id="popup__menu__catalog">
+                <span class="_icon-catalog"></span>
+                Катлог товаров
+            </button>
+        </li>
+        <li>
+            <button class="popup__menu__item popup__menu__basket" id="popup__menu__basket">
+                <span class="_icon-shopping-cart"></span>
+                Корзина
+            </button>
+        </li>
+        <li>
+            <a href="" class="popup__menu__item popup__menu__points">
+                <span class="_icon-point-of-issue"></span>
+                Пункты выдачи Morkovka
+            </a>
+        </li>
+        <li>
+            <a href="" class="popup__menu__item popup__menu__chat">
+                <span class="_icon-paper-plane"></span>
+                Чат с Morkovka
+            </a>
+        </li>
+        <li>
+            <a href="" class="popup__menu__item popup__menu__faq">
+                <span class="_icon-faq"></span>
+                FAQ
+            </a>
+        </li>
+        <li class="language__popup__section">
+            <h3 class="language__head">Язык</h3>
+            <ul class="language__switcher">
+                <li>
+                    <button class="language__choice language__choice__ru" id="language__choice__ru" disabled>RU</button>
+                </li>
+                <li>
+                    <button class="language__choice language__choice__ua" id="language__choice__ua">UA</button>
+                </li>
+            </ul>
+        </li>
+        <li class="dropper__nav__menu__list">
+            <h3 class="dropper__nav__title">О компании</h3>
+            <button class="_icon-arrow arrow1"></button>
+            <ul class="dropper__nav__menu">
+                <li><a href="" class="dropper__nav__choice">О нас</a></li>
+                <li><a href="" class="dropper__nav__choice">Условия использования сайта</a></li>
+                <li><a href="" class="dropper__nav__choice">Контакты</a></li>
+                <li><a href="" class="dropper__nav__choice">Все категории</a></li>
+            </ul>
+        </li>
+        <li class="dropper__nav__menu__list">   
+            <h3 class="dropper__nav__title">Помощь</h3>
+            <button class="_icon-arrow"></button>           
+            <ul class="dropper__nav__menu">
+                <li><a href="" class="dropper__nav__choice">Доставка и оплата</a></li>
+                <li><a href="" class="dropper__nav__choice">Гарантия</a></li>
+                <li><a href="" class="dropper__nav__choice">Возврат товара</a></li>
+            </ul>
+        </li>
+        <li class="dropper__nav__menu__list">
+            <h3 class="dropper__nav__title">Партнерам</h3>
+            <button class="_icon-arrow"></button>      
+            <ul class="dropper__nav__menu">
+                <li><a href="" class="dropper__nav__choice">Продавать на Morkovka</a></li>
+                <li><a href="" class="dropper__nav__choice">Сотрудничество с нами</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3 class="social__media__head">Мы в социальных сетях</h3>
+            <ul class="social__media__list">
+                <li><a href="https://facebook.com/" title="Facebook" target="_blank" class="social__media _icon-facebook"></a></li>
+                <li><a href="https://twitter.com/" title="Twitter" target="_blank" class="social__media _icon-twitter"></a></li>
+                <li><a href="https://www.youtube.com/" title="Youtube" target="_blank" class="social__media _icon-youtube"></a></li>
+                <li><a href="https://www.instagram.com/" title="Instagram" target="_blank" class="social__media _icon-instagram"></a></li>
+                <li><a href="https://www.viber.com/" title="Viber" target="_blank" class="social__media _icon-viber"></a></li>
+                <li><a href="https://telegram.org/" title="Telegram" target="_blank" class="social__media _icon-telegram"></a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div class="popup__basket__wrap">
+    <div class="popup__basket" id="popup__basket">
+        <header class="popup__basket__header">
+            <h3 class="popup__basket__title">Корзина</h3>
+            <button class="popup__basket__close__button" id="popup__basket__close__button">
+                <div>
+                    <span class="popup__basket__bar popup__basket__bar__1"></span>
+                    <span class="popup__basket__bar popup__basket__bar__2"></span>
+                </div>
+            </button>
+        </header>
+        <div class="popup__basket__line"></div>
     </div>
 </div>
+<div class="popup__profile__wrap">
+    <div class="popup__profile" id="popup__profile">
+        <header class="popup__profile__header">
+            <h3 class="popup__profile__title">Профиль</h3>
+            <button class="popup__profile__close__button" id="popup__profile__close__button">
+                <div>
+                    <span class="popup__profile__bar popup__profile__bar__1"></span>
+                    <span class="popup__profile__bar popup__profile__bar__2"></span>
+                </div>
+            </button>
+        </header>
+        <div class="popup__profile__line"></div>
+    </div>
+</div>
+
     <section>
     <div class="container">
         <div class="slides">
