@@ -1,0 +1,49 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "title": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "image1": "quattroflex_profi+1.png",
+            "image2": "quattroflex_profi+2.png",
+            "alt": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "url": "",
+            "oldprice": "",
+            "price": "3000"
+        },
+        {
+            "id": 2,
+            "name": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "title": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "image1": "quattroflex_profi+1.png",
+            "image2": "quattroflex_profi+2.png",
+            "alt": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "url": "",
+            "oldprice": "",
+            "price": "3000"
+        },
+        {
+            "id": 3,
+            "name": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "title": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "image1": "quattroflex_profi+1.png",
+            "image2": "quattroflex_profi+2.png",
+            "alt": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "url": "",
+            "oldprice": "3553",
+            "price": "3000"
+        },
+        {
+            "id": 4,
+            "name": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "title": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "image1": "quattroflex_profi+1.png",
+            "image2": "quattroflex_profi+2.png",
+            "alt": "Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;",
+            "url": "",
+            "oldprice": "5000",
+            "price": "3000"
+        }
+    ]
+
+}
