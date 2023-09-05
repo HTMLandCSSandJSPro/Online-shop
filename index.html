@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morkovka</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
     <div class="blackout" id="blackout"></div>
@@ -21,10 +21,11 @@
         Каталог
     </button>
     <button class="header__basket__button" id="header__basket__button">
-        <img class="header__basket" src="./img/shopping-cart.svg" alt="">
+        <picture><source srcset="img/shopping-cart.svg" type="image/webp"><img class="header__basket" src="img/shopping-cart.svg" alt=""></picture>
     </button>
+    
     <button class="header__profile__button" id="header__profile__button">
-        <img class="header__profile" src="img/profile.svg" alt="">
+        <picture><source srcset="img/profile.svg" type="image/webp"><img class="header__profile" src="img/profile.svg" alt=""></picture>
     </button>
 </header>
 <nav class="popup__menu" id="popup__menu">
@@ -145,7 +146,9 @@
             </button>
         </header>
         <div class="popup__profile__line"></div>
-    </div>
+        <div>
+        </div>
+</div>
 </div>
 
     <section>
@@ -167,9 +170,26 @@
     
 </section>
 <section class="stock__section">
-    <ul class="stock__products__list">
-        
-    </ul>
+    <div class="products" id="products"></div>
+        <!-- <div class="product__box__wrap">
+            <div class="product__box">
+                <button class="product__box__favourite__button"><picture><source srcset="img/favourite.svg" type="image/webp"><img src="img/favourite.svg" alt="" class="product__box__favourite__img"></picture></button>
+                <a href="" class="product__box__img__link">
+                    <div class="product__box__img__wrap" title="Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;">
+                        <picture><source srcset="img/quattroflex_profi+1.webp" type="image/webp"><img src="img/quattroflex_profi+1.png" alt="" class="product__box__img" title="Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;"></picture>
+                    </div>
+                    <div class="product__box__img__wrap">
+                        <picture><source srcset="img/quattroflex_profi+2.webp" type="image/webp"><img src="img/quattroflex_profi+2.png" alt="" class="product__box__img" title="Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;"></picture>
+                    </div>
+                    
+                </a>
+                <a href="" title="Шланг Rehau Quattroflex Profi+ 40m 3/4&quot;" class="product__box__title">Шланг Rehau Quattroflex Profi+ 40m 3/4"</a>
+                <div class="product__box__prices">
+                    <div class="product__box__old__price"><span class="product__box__old__price__number"></span><span class="product__box__old__price__currency">₴</span></div>
+                    <div class="product__box__price"><span class="product__box__price__number">3000</span><span class="product__box__price__currency">₴</span></div>
+                </div> 
+            </div>
+        </div> -->
 </section>
 <section>
     
@@ -177,6 +197,7 @@
     <footer class="footer">
 
 </footer>
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="json/products.json"></script>
 </body>
 </html>

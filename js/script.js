@@ -176,72 +176,181 @@ function popupProfileClose() {
   body.classList.remove("noscroll");
   popupProfile.classList.remove("active");
 }
-// function loadNewsPictures(data) {
-//   const sliderPictures = document.querySelector(".slides");
-//   data.newsimage.forEach((item) => {
-//     const newsimageId = item.id;
-//     const newsimageName = item.name;
-//     const newsimageUrl = item.url;
-//     const newsimageImage = item.image;
+// async function getProducts() {
+//   const file = "json/products.json";
+//   try {
+//     let response = await fetch(file, {
+//       method: "GET",
+//     });
+//     if (response.ok) {
+//       let result = await response.json();
+//       loadProducts(result);
+//     } else {
+//       alert("Ошибка");
+//     }
+//   } catch (error) {
+//     console.error("Произошла ошибка:", error);
+//   }
+// }
 
-//     let newsTemplateStart = `<a href="${newsimageUrl}" class="slide">`;
-//     let newsTemplateEnd = "</a>";
+// function loadProducts(data) {
+//   const productsContainer = document.getElementById("products");
+//   data.products.forEach((item) => {
+//     const productId = item.id;
+//     const productName = item.name;
+//     const productTitle = item.title;
+//     const productImage1 = item.image1;
+//     const productImage2 = item.image2;
+//     const productAlt = item.alt;
+//     const productUrl = item.url;
+//     const productOldPrice = item.oldprice;
+//     const productPrice = item.price;
 
-//     let newsTemplateImage = `
-//       <img id="slide-${newsimageId}" src="img/news/${newsimageImage}" alt="${newsimageName}"/>
+//     let productsTemplateStart = `<div class="product__box__wrap" id="${productId}">`;
+//     let productsTemplateEnd = "</div>";
+
+//     let productsTemplateContent = `
+//       <div class="product__box">
+//           <button class="product__box__favourite__button"><img src="img/favourite.svg" alt="" class="product__box__favourite__img"></button>
+//           <a href="" class="product__box__img__link">
+//               <div class="product__box__img__wrap" title="${productTitle}">
+//                   <img src="img/${productImage1}" alt="${productAlt}" class="product__box__img" title="${productTitle}">
+//               </div>
+//               <div class="product__box__img__wrap">
+//                   <img src="img/${productImage2}" alt="${productAlt}" class="product__box__img" title="${productTitle}">
+//               </div>
+//           </a>
+//           <a href="${productUrl}" title="${productTitle}" class="product__box__title">${productName}</a>
+//           <div class="product__box__prices">
+//               <div class="product__box__old__price"><span class="product__box__old__price__number">${productOldPrice}</span><span class="product__box__old__price__currency">₴</span></div>
+//               <div class="product__box__price"><span class="product__box__price__number">${productPrice}</span><span class="product__box__price__currency">₴</span></div>
+//           </div> 
+//       </div>
 //     `;
 
-//     let newsTemplate = "";
-//     newsTemplate += newsTemplateStart;
-//     newsTemplate += newsTemplateImage;
-//     newsTemplate += newsTemplateEnd;
+//     let productsTemplate = "";
+//     productsTemplate += productsTemplateStart;
+//     productsTemplate += productsTemplateContent;
+//     productsTemplate += productsTemplateEnd;
 
-//     sliderPictures.insertAdjacentHTML("beforeend", newsTemplate);
+//     productsContainer.insertAdjacentHTML("beforeend", productsTemplate);
+//   });
+//   productsContainer.forEach((productContainer) => {
+//     const productContainer = productsContainer.lastChild;
+//     const oldPrice = productContainer.querySelector(
+//       ".product__box__old__price"
+//     );
+//     const oldPriceNumber = oldPrice.querySelector(
+//       ".product__box__old__price__number"
+//     );
+//     const oldPriceCurrency = oldPrice.querySelector(
+//       ".product__box__old__price__currency"
+//     );
+//     if (
+//       !oldPriceNumber.textContent.trim() ||
+//       !oldPriceCurrency.textContent.trim()
+//     ) {
+//       oldPrice.classList.add("empty");
+//     }
 //   });
 // }
+// getProducts();
 
-// // function loadNewsNav(data) {
-// //   const sliderNav = document.querySelector(".slider-nav");
-// //   data.newsnavcircle.forEach((item) => {
-// //     const newsnavcircleUrl = item.url;
+async function getProducts() {
+  const file = "json/products.json";
+  try {
+    let response = await fetch(file, {
+      method: "GET",
+    });
+    if (response.ok) {
+      let result = await response.json();
+      loadProducts(result);
+    } else {
+      alert("Ошибка");
+    }
+  } catch (error) {
+    console.error("Произошла ошибка:", error);
+  }
+}
 
-// //     let newsTemplateStart = `<a href="${newsnavcircleUrl}" class="news-nav-circle">`;
-// //     let newsTemplateEnd = "</a>";
+function loadProducts(data) {
+  const productsContainer = document.getElementById("products");
+  let productsTemplate = "";
 
-// //     let newsTemplate = "";
-// //     newsTemplate += newsTemplateStart;
-// //     newsTemplate += newsTemplateEnd;
+  data.products.forEach((item) => {
+    const productId = item.id;
+    const productName = item.name;
+    const productTitle = item.title;
+    const productImage1 = item.image1;
+    const productImage2 = item.image2;
+    const productAlt = item.alt;
+    const productUrl = item.url;
+    const productOldPrice = item.oldprice;
+    const productPrice = item.price;
 
-// //     sliderNav.insertAdjacentHTML("beforeend", newsTemplate);
-// //   });
-// // }
+    let productsTemplateStart = `<div class="product__box__wrap" id="${productId}">`;
+    let productsTemplateEnd = "</div>";
 
-// // Fetch and load news data
-// function loadNewsData() {
-//   // Fetch the news data from the JSON file for news pictures
-//   fetch("json/newsimage.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // Call the function to create HTML elements using the news data
-//       loadNewsPictures(data);
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching news pictures data:", error);
-//     });
+    const formattedPrice = formatPrice(productPrice);
+    const formattedOldPrice = formatPrice(productOldPrice);
 
-//   // Fetch the news data from the JSON file for news nav
-// //   fetch("json/news-nav.json")
-// //     .then((response) => response.json())
-// //     .then((data) => {
-// //       // Call the function to create HTML elements using the news data
-// //       loadNewsNav(data);
-// //     })
-// //     .catch((error) => {
-// //       console.error("Error fetching news nav data:", error);
-// //     });
-// }
+    let productsTemplateContent = `
+      <div class="product__box">
+          <button class="product__box__favourite__button"><img src="img/favourite.svg" alt="" class="product__box__favourite__img"></button>
+          <a href="${productUrl}" class="product__box__img__link">
+              <div class="product__box__img__wrap" title="${productTitle}">
+                  <img src="img/${productImage1}" alt="${productAlt}" class="product__box__img" title="${productTitle}">
+              </div>
+              <div class="product__box__img__wrap">
+                  <img src="img/${productImage2}" alt="${productAlt}" class="product__box__img" title="${productTitle}">
+              </div>
+          </a>
+          <a href="${productUrl}" title="${productTitle}" class="product__box__title">${productName}</a>
+          <div class="product__box__prices">
+              <div class="product__box__old__price"><span class="product__box__old__price__number">${formattedOldPrice}</span><span class="product__box__old__price__currency">₴</span></div>
+              <div class="product__box__price"><span class="product__box__price__number">${formattedPrice}</span><span class="product__box__price__currency">₴</span></div>
+          </div> 
+      </div>
+    `;
 
-// // Call the function to load news data and create HTML elements
-//   loadNewsData();
+    productsTemplate += productsTemplateStart;
+    productsTemplate += productsTemplateContent;
+    productsTemplate += productsTemplateEnd;
+  });
+  productsContainer.innerHTML = productsTemplate;
 
+  data.products.forEach((item) => {
+    const productContainer = document.getElementById(item.id);
+    const oldPrice = productContainer.querySelector(
+      ".product__box__old__price"
+    );
+    const oldPriceNumber = oldPrice.querySelector(
+      ".product__box__old__price__number"
+    );
+    const oldPriceCurrency = oldPrice.querySelector(
+      ".product__box__old__price__currency"
+    );
+    if (
+      !oldPriceNumber.textContent.trim() ||
+      !oldPriceCurrency.textContent.trim()
+    ) {
+      oldPrice.classList.add("empty");
+    }
+  });
+}
 
+function formatPrice(price) {
+  const priceString = price.toString();
+  const parts = priceString.split(".");
+  const integerPart = parts[0];
+  const decimalPart = parts[1] || "";
+  const formattedIntegerPart = integerPart.replace(
+    /\B(?=(\d{3})+(?!\d))/g,
+    "&nbsp;"
+  );
+  const formattedPrice =
+    formattedIntegerPart + (decimalPart ? "." + decimalPart : "");
+  return formattedPrice;
+}
+
+getProducts();
